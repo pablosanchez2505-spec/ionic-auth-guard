@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Acceso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-card class="login-card">
+    <ion-card-header>
+      <ion-icon name="lock-closed-outline" class="login-icon"></ion-icon>
+      <ion-card-title>Iniciar sesión</ion-card-title>
+      <ion-card-subtitle>Zona de administración</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ion-input
+          formControlName="username"
+          label="Usuario"
+          labelPlacement="floating"
+          fill="outline"
+          autocomplete="username"
+          errorText="El usuario es obligatorio"
+        ></ion-input>
+
+        <ion-input
+          formControlName="password"
+          type="password"
+          label="Contraseña"
+          labelPlacement="floating"
+          fill="outline"
+          autocomplete="current-password"
+          errorText="La contraseña es obligatoria"
+        ></ion-input>
+
+        @if (errorMessage()) {
+          <ion-text color="danger">
+            <p class="error">{{ errorMessage() }}</p>
+          </ion-text>
+        }
+
+        <ion-button type="submit" expand="block">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Entrar
+        </ion-button>
+      </form>
+
+      <ion-note class="hint">Credenciales de prueba: admin / 123</ion-note>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

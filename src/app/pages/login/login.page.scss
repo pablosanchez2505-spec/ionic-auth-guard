@@ -1,0 +1,25 @@
+.login-card {
+  max-width: 420px;
+  margin: 10vh auto 0;
+}
+
+.login-icon {
+  font-size: 48px;
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+}
+
+ion-input {
+  margin-bottom: 16px;
+}
+
+.error {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+
+.hint {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+}
